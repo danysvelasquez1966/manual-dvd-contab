@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Usuario — DVD CONTAB</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        line-height: 1.7;
+        color: #212121;
+        background: #f5f5f5;
+        padding: 20px;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px 60px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    header {
+        text-align: center;
+        padding-bottom: 30px;
+        border-bottom: 4px solid #008080;
+        margin-bottom: 30px;
+    }
+    header h1 {
+        color: #004d4d;
+        font-size: 2.2em;
+        margin-bottom: 10px;
+    }
+    header p {
+        color: #757575;
+        font-size: 1.05em;
+    }
+    .version {
+        display: inline-block;
+        background: #008080;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+    h2 {
+        color: #004d4d;
+        font-size: 1.6em;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #e0f2f1;
+    }
+    h3 {
+        color: #006666;
+        font-size: 1.25em;
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
+    h4 {
+        color: #008080;
+        font-size: 1.05em;
+        margin-top: 18px;
+        margin-bottom: 8px;
+    }
+    p { margin-bottom: 12px; text-align: justify; }
+    ul, ol { margin: 12px 0 12px 30px; }
+    li { margin-bottom: 6px; }
+    code {
+        background: #e0f2f1;
+        color: #004d4d;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 0.9em;
+    }
+    pre {
+        background: #263238;
+        color: #eceff1;
+        padding: 15px 20px;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 0.9em;
+        margin: 15px 0;
+        line-height: 1.5;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    th {
+        background: #004d4d;
+        color: white;
+        font-weight: 600;
+    }
+    tr:nth-child(even) { background: #f9f9f9; }
+    tr:hover { background: #e0f2f1; }
+    .nota {
+        background: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 12px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    .alerta {
+        background: #ffebee;
+        border-left: 4px solid #c0392b;
+        padding: 12px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    .ok {
+        background: #e8f5e9;
+        border-left: 4px solid #2e7d32;
+        padding: 12px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    .indice {
+        background: #e0f2f1;
+        padding: 25px 35px;
+        border-radius: 8px;
+        margin: 25px 0;
+    }
+    .indice h3 { margin-top: 0; }
+    .indice ol { columns: 2; column-gap: 30px; }
+    .btn {
+        display: inline-block;
+        background: #004d4d;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 5px 3px;
+        transition: all 0.3s;
+    }
+    .btn:hover { background: #008080; transform: translateY(-2px); }
+    .footer {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 2px solid #e0f2f1;
+        color: #757575;
+        font-size: 0.9em;
+    }
+    .flujo {
+        background: #263238;
+        color: #b2dfdb;
+        padding: 25px;
+        border-radius: 8px;
+        font-family: 'Consolas', monospace;
+        font-size: 0.85em;
+        line-height: 1.4;
+        overflow-x: auto;
+        white-space: pre;
+    }
+    @media print {
+        body { background: white; padding: 0; }
+        .container { box-shadow: none; padding: 20px; }
+        h2 { page-break-before: always; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>📘 DVD CONTAB</h1>
+    <p>Sistema Contable Profesional</p>
+    <p style="font-size: 0.95em;">Manual de Usuario Completo</p>
+    <span class="version">Versión 2.0</span>
+</header>
+
+<div class="indice">
+    <h3>📑 Índice</h3>
+    <ol>
+        <li>Introducción</li>
+        <li>Instalación y Requisitos</li>
+        <li>Acceso al Sistema</li>
+        <li>Menú Principal</li>
+        <li>Descripción de Módulos</li>
+        <li>Diagrama de Flujo</li>
+        <li>Cumplimiento Normativo</li>
+        <li>Preguntas Frecuentes</li>
+        <li>Soporte Técnico</li>
+    </ol>
+</div>
+
+<h2>1. Introducción</h2>
+<p><strong>DVD CONTAB</strong> es un sistema contable profesional diseñado para pequeñas y medianas empresas venezolanas. Automatiza:</p>
+<ul>
+    <li>El registro contable por partida doble</li>
+    <li>Los libros fiscales exigidos por el SENIAT</li>
+    <li>Los estados financieros bajo NIIF</li>
+    <li>El cálculo de impuestos (IVA, ISLR, IGTF, IGP)</li>
+    <li>El cierre contable y los ajustes por inflación</li>
+</ul>
+<div class="ok">
+    <strong>Regla de oro:</strong> Todo ingreso de datos alimenta automáticamente los demás módulos. No hay que repetir información.
+</div>
+
+<h2>2. Instalación y Requisitos</h2>
+
+<h3>2.1 Requisitos Mínimos</h3>
+<table>
+    <tr><th>Componente</th><th>Mínimo</th><th>Recomendado</th></tr>
+    <tr><td>Sistema Operativo</td><td>Windows 7</td><td>Windows 10/11</td></tr>
+    <tr><td>Memoria RAM</td><td>4 GB</td><td>8 GB</td></tr>
+    <tr><td>Python</td><td>3.13 (32-bit)</td><td>3.13 (64-bit)</td></tr>
+    <tr><td>Disco</td><td>500 MB</td><td>2 GB</td></tr>
+</table>
+
+<h3>2.2 Instalación Paso a Paso</h3>
+
+<h4>Paso 1 — Instalar Python</h4>
+<ol>
+    <li>Descargue desde <code>python.org/downloads</code></li>
+    <li><strong>Marque</strong> "Add Python to PATH"</li>
+    <li>Clic en "Install Now"</li>
+</ol>
+
+<h4>Paso 2 — Instalar librerías</h4>
+<pre>pip install openpyxl
+pip install Pillow
+pip install reportlab</pre>
+
+<h4>Paso 3 — Crear carpeta</h4>
+<p>En el Escritorio, cree: <code>DVD Contab</code> con subcarpetas <code>BACKUPS</code> y <code>Reportes_Contables</code>.</p>
+
+<h4>Paso 4 — Ejecutar</h4>
+<pre>cd /d "C:\Users\TuUsuario\Desktop\DVD Contab"
+python sistema_contable_dvd.py</pre>
+
+<h2>3. Acceso al Sistema</h2>
+<p>Al iniciar aparece la ventana de acceso:</p>
+<table>
+    <tr><th>Campo</th><th>Descripción</th></tr>
+    <tr><td>Usuario</td><td>Nombre de usuario registrado</td></tr>
+    <tr><td>Contraseña</td><td>Clave personal (ver con el ojito 👁)</td></tr>
+    <tr><td>Admin. Recursos</td><td>Acceso con clave maestra</td></tr>
+</table>
+<div class="nota">
+    <strong>Credenciales por defecto:</strong><br>
+    Usuario: <code>Admin</code> — Contraseña: <code>XXXXXXX</code>
+</div>
+
+<h2>4. Menú Principal</h2>
+<p>El Menú está organizado por <strong>flujo contable real</strong>:</p>
+<pre>
+Fila 0:  CONTABILIDAD       PLAN DE CUENTAS      REGISTRAR COMPRA     REGISTRAR VENTA
+Fila 1:  LIBRO DE COMPRAS   LIBRO DE VENTAS      REGISTROS IVA        CÁLC. ISLR
+Fila 2:  BAL. COMPROBACIÓN  ESTADO RESULTADOS    BALANCE GENERAL      CÁLC. INVENTARIO
+Fila 3:  LIBRO MAYOR GRAL   MAYOR ANALÍTICO      CIERRE CONTABLE      CONFIGURACIÓN
+Fila 4:  NOTAS C/D          ADMIN. RECURSOS      AUDITORÍA            CERRAR SESIÓN
+
+Fondo:   ▓▓▓▓ SALIR DEL SISTEMA ▓▓▓▓ (ancho completo, rojo)
+</pre>
+
+<h2>5. Descripción de Módulos</h2>
+
+<h3>5.1 Contabilidad</h3>
+<p><strong>Función:</strong> Registro de asientos contables por partida doble.</p>
+<p><strong>Valida:</strong> Debe = Haber, formato de fecha, glosa obligatoria.</p>
+
+<h3>5.2 Plan de Cuentas</h3>
+<p><strong>Función:</strong> Administrar el catálogo de cuentas.</p>
+
+<h3>5.3 Registrar Compra</h3>
+<p><strong>Función:</strong> Registrar facturas de compra con datos SENIAT.</p>
+<p><strong>Genera automáticamente:</strong> Registro en Libro_Compras + Asiento contable.</p>
+
+<h3>5.4 Registrar Venta</h3>
+<p><strong>Función:</strong> Registrar facturas de venta.</p>
+<p><strong>Genera:</strong> Registro en Libro_Ventas + Asiento contable.</p>
+
+<h3>5.5 Libro de Compras</h3>
+<p>Reporte fiscal en formato SENIAT. Exportable a Excel.</p>
+
+<h3>5.6 Libro de Ventas</h3>
+<p>Reporte fiscal en formato SENIAT. Exportable a Excel.</p>
+
+<h3>5.7 Registros IVA</h3>
+<p>Cálculo de IVA a pagar o excedente a arrastrar.</p>
+
+<h3>5.8 Cálculo ISLR</h3>
+<p>Estimación del ISLR con tarifas progresivas según LISLR.</p>
+
+<h3>5.9 Balance de Comprobación</h3>
+<p>Verifica que Debe = Haber. Detecta saldos anómalos.</p>
+
+<h3>5.10 Estado de Resultados</h3>
+<p>Formato NIIF 18 con las 3 categorías: Operación, Inversión, Financiación.</p>
+
+<h3>5.11 Balance General</h3>
+<p>Estado de situación financiera (siempre acumulado).</p>
+
+<h3>5.12 Cálculo Inventario</h3>
+<p>Costo de venta + IGP (Impuesto a los Grandes Patrimonios).</p>
+
+<h3>5.13 Libro Mayor General</h3>
+<p>Todos los movimientos por cuenta.</p>
+
+<h3>5.14 Mayor Analítico</h3>
+<p>Detalle cronológico de una cuenta específica.</p>
+
+<h3>5.15 Cierre Contable</h3>
+<p>Cierre del ejercicio + Ajuste por Inflación + NIIF PYMES.</p>
+
+<h3>5.16 Configuración</h3>
+<p>Backups, restauración, calculadora de activos.</p>
+
+<h3>5.17 Notas C/D</h3>
+<p>Notas de Crédito y Débito (clientes y proveedores).</p>
+
+<h3>5.18 Admin. Recursos</h3>
+<p>Gestión de usuarios y contraseñas.</p>
+
+<h3>5.19 Auditoría</h3>
+<p>Registro histórico de todas las acciones.</p>
+
+<h3>5.20 Cerrar Sesión</h3>
+<p>Vuelve a la pantalla de Selección de Empresa.</p>
+
+<h3>5.21 Salir del Sistema</h3>
+<p>Cierra el programa completamente.</p>
+
+<h2>6. Diagrama de Flujo</h2>
+<pre class="flujo">
+        INICIO DEL DÍA
+        (Login + Empresa)
+              │
+              ▼
+    OPERACIONES DEL DÍA
+    ┌─────────┴─────────┐
+    ▼                   ▼
+REGISTRAR          REGISTRAR
+COMPRA             VENTA
+    └────────┬────────┘
+             ▼
+    AUTOMÁTICAMENTE:
+    • Actualiza Libros Fiscales
+    • Genera asiento en Libro Diario
+    • Recalcula IVA y Balances
+             │
+             ▼
+        FIN DEL MES
+    CONSULTAS Y REPORTERÍA
+    ┌─────────┼─────────┐
+    ▼         ▼         ▼
+LIBRO     BALANCE    BALANCE
+DIARIO    COMPROB.   GENERAL
+    └─────────┼─────────┘
+              ▼
+        ESTADO RESULTADOS
+        + Cálculo ISLR
+        + Registros IVA
+              │
+              ▼
+        CIERRE CONTABLE
+        • Cierre cuentas
+        • Ajustes
+        • Distribución
+        • Ajuste Inflación
+        • Apertura próximo año
+</pre>
+
+<h2>7. Cumplimiento Normativo</h2>
+<table>
+    <tr><th>Normativa</th><th>Cumplimiento</th></tr>
+    <tr><td>Código de Comercio</td><td>Libro Diario, Mayor y Balances</td></tr>
+    <tr><td>Ley de IVA</td><td>Libros de Compras y Ventas</td></tr>
+    <tr><td>LISLR</td><td>Cálculo de ISLR progresivo</td></tr>
+    <tr><td>Ley de IGTF</td><td>Cálculo del 3%</td></tr>
+    <tr><td>Providencia SENIAT RIF</td><td>Validación con dígito verificador</td></tr>
+    <tr><td>NIIF 18</td><td>Estado de Resultados</td></tr>
+    <tr><td>NIIF PYMES 3ª ed.</td><td>5 pasos para reconocimiento</td></tr>
+</table>
+
+<h2>8. Preguntas Frecuentes</h2>
+<p><strong>¿Cómo hago una copia de seguridad?</strong> Menú → Configuración → Crear Backup Manual.</p>
+<p><strong>¿Los reportes se exportan a Excel?</strong> Sí, todos tienen botón "Exportar Excel".</p>
+<p><strong>¿Puedo trabajar con varias empresas?</strong> Sí, al iniciar se elige la empresa.</p>
+<p><strong>¿Cómo registro una retención de IVA?</strong> Marque el checkbox en Registrar Compra.</p>
+<p><strong>¿Qué es el ajuste por inflación?</strong> Reexpresa activos no monetarios usando INPC del BCV.</p>
+
+<h2>9. Soporte Técnico</h2>
+<table>
+    <tr><td><strong>Autor</strong></td><td>Prof. Danys Velásquez</td></tr>
+    <tr><td><strong>Email</strong></td><td>danysvelasquez1966@gmail.com</td></tr>
+    <tr><td><strong>Sistema</strong></td><td>DVD CONTAB v2.0</td></tr>
+    <tr><td><strong>Requisitos</strong></td><td>Python 3.13+, 4 GB RAM</td></tr>
+</table>
+
+<div class="footer">
+    <strong>DVD CONTAB © 2025</strong><br>
+    Sistema Contable Profesional<br>
+    Todos los derechos reservados
+</div>
+
+</div>
+</body>
+</html>
